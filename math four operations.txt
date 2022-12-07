@@ -1,0 +1,154 @@
+#include <stdio.h>
+
+#include <stdlib.h>
+
+
+int main(int argc, char *argv[])
+{
+char f;
+int x ;
+float a, b;
+A:
+do{
+
+	printf("bir daha islem seçenizi \n");
+	printf("toplama için 1:\n");
+	printf("çikarma için 2:\n");
+	printf("çarpma için  3:\n");
+	printf("bölme için   4:\n");
+	fflush(stdout);
+    scanf("%d",&x);
+
+
+	switch (x)
+
+{
+
+
+    case 1:
+    	                        printf("\n-----------------");
+    				printf("\n-----------------");
+    				printf("\n-----toplam------");
+    				printf("\n----a+b----= ? --");
+    				printf("\n-----------------");
+
+    	printf("\n a sayiyi giriniz ");
+    	  fflush(stdout);
+    	  scanf("%f",&a);
+    	printf("\n b sayiyi giriniz ");
+    	  fflush(stdout);
+          scanf("%f",&b);
+    	printf("\n Toplama islemini sectiniz..\n");
+        printf("\n %.0f+%.0f=%.3f",a,b,a+b);
+        printf("\n baska bir islem isteiyor musunuz? (y/n)  ");
+	     fflush(stdout);
+	     scanf("%s", &f);
+	     if(f == 'n' ){
+	     printf("baska bir islem yapmamak karar vediniz");
+	    			           }
+	   break;
+
+        case 2:
+        	           printf("\n-----------------");
+        	    	   printf("\n-----------------");
+        	    	   printf("\n-----çikarma-----");
+        	    	   printf("\n----a-b = ?------");
+        	     	   printf("\n-----------------");
+
+            	   printf("\n a sayiyi giriniz ");
+            	   	  fflush(stdout);
+            	   	  scanf("%f",&a);
+
+            	   	printf("\n b sayiyi giriniz ");
+            	   	  fflush(stdout);
+            	   	  scanf("%f",&b);
+
+               printf ("\n Cikarma islemini sectiniz...\n");
+               printf("\n %.0f-%.0f=%.3f",a,b,a-b);
+               printf("\n baska bir islem isteiyor musunuz? (y/n)  ");
+	             fflush(stdout);
+	             scanf("%s", &f);
+	             if(f == 'n' ){
+	           printf("baska bir islem yapmamak karar vediniz");
+	            			            }
+               break;
+
+               case 3:
+            	          printf("\n-----------------");
+            	       	  printf("\n-----------------");
+            	       	  printf("\n-----çarpma------");
+            	       	  printf("\n----a*b = ?------");
+            	     	  printf("\n-----------------");
+
+            	   printf("\n a sayiyi giriniz ");
+            	    	fflush(stdout);
+            	   	    scanf("%f",&a);
+
+            	   	printf("\n b sayiyi giriniz ");
+            	        fflush(stdout);
+            	   	    scanf("%f",&b);
+
+               printf ("\n çarpma islemini sectiniz...\n");
+               printf("\n %.0f*%.0f=%.3f",a,b,a*b);
+               printf("\n baska bir islem isteiyor musunuz? (y/n)  ");
+	               fflush(stdout);
+	               scanf("%s", &f);
+	               if(f == 'n' ){
+	              printf("baska bir islem yapmamak karar vediniz");
+	              }
+               break;
+
+                case 4:
+                	   printf("\n------------------");
+                	   printf("\n------------------");
+                	   printf("\n-----bölme--------");
+                	   printf("\n----a/b = ?-------");
+                	   printf("\n------------------");
+
+                	   printf("\n a sayiyi giriniz ");
+                		fflush(stdout);
+                		scanf("%f",&a);
+
+                		printf("\n b sayiyi giriniz ");
+                		  fflush(stdout);
+                		   scanf("%f",&b);
+               if(b == 0){
+                 printf("\n bölen 0 olamaz ");
+		         printf("\n baska bir islem isteiyor musunuz? (y/n)  ");
+			            fflush(stdout);
+			            scanf("%s", &f);
+
+               	}
+
+            else{
+
+                printf("\n Bolme islemini sectiniz...\n");
+                printf("\n  %.0f/%.0f=%.3f",a,b,a/b);
+                printf("\n  baska bir islem isteiyor musunuz? (y/n)  ");
+	            fflush(stdout);
+	            scanf("%s", &f);
+	            if(f == 'n' ){
+	            printf("baska bir islem yapmamak karar vediniz");
+	            		     }
+                }
+                break;
+
+         default:
+           printf("isleminiz geçersiz\n");
+
+goto A;
+}
+
+
+}
+
+while ( f=='y');
+
+
+
+
+
+
+	return 0;
+
+}

@@ -1,0 +1,1691 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#define SIZE 3
+#define array_size 200
+//    fflush(stdout);
+
+
+
+//int main()
+//{
+//                                      *********************************pointers
+
+/*
+
+
+	int x = 7 ;
+	printf("x value = %d\n",x);
+	printf("x address = %p\n",&x);
+
+
+	int *xpointer = &x;
+	printf("x Pointer = %p\n",xpointer);
+
+
+	*xpointer=10;
+	printf("x == %d\n",x);
+
+	printf("in the address value %p= %d\n",xpointer , *xpointer);
+
+	int n1 = 200;
+	int n2 = 400;
+	int *p = &n1;
+	*p = 1;
+	p = &n2;
+	*p /= 4;
+	printf("Sum is: %d", n1 + n2);
+}
+*/
+/*
+
+	int x = 5, *xptr= &x ;
+	printf("%d\n", *xptr * *xptr );
+	printf("%p\n", *&xptr);
+
+*/
+
+	//***************************************************Sizeof function
+	/*
+	int x = 5 ;
+	double d =2.4 ;
+	float f = 2.3 ;
+	char c = 's';
+	int array[3]=  {1,2,3};
+
+		printf("size of x = %d\n",sizeof(x));
+		printf("size of d = %d\n",sizeof(d));
+		printf("size of f = d%\n",sizeof(f));
+		printf("size of c = %d\n",sizeof(c));
+		printf("size of array = %d\n",sizeof(array));
+*/
+
+
+//**********************************************************math with pointer
+	/*
+	int array[4]={10,20,30,40};
+
+		for(int i = 0; i<array[i];i++){
+			int *arptr=&array[i];
+			printf("array=%d\n",*(arptr+0));
+
+			}
+
+
+*/
+
+	//************************************************     pointer with arrays
+
+	/*
+	     int array[4]={10,20,30,40};
+	     int *arptr=&array[0];
+
+			for(int i = 0; i<4;i++,arptr++){
+				printf("array[%d]=%d\n",i, *arptr);
+*/
+
+/*
+	int arr	[]={2,4,6,8};
+	int *p=arr;
+	p +=sizeof(int)/2;
+	printf("%d",*p);
+*/
+
+
+
+	//****************************************************************dosyalar
+
+
+
+//***********************************************************write in the file
+	/*
+	FILE *f= fopen("myfile.txt","w");
+
+	char *s = "hello im abdullah ";
+
+	fwrite(s, sizeof(char),strlen(s),f);
+
+	fclose(f);
+*/
+
+
+
+
+
+	//*********************************************************read for the file
+	/*
+	FILE *f=fopen("myfile.txt","r");
+
+    fseek(f,0,SEEK_END);//ilk önce dosya adı yazarız sonra nereden başlayacağız sonra sonra sonuna kadar gideceğiz
+	unsigned int sz = ftell(f); //burada dosyanın içindikler kaç harf bilitik
+	fseek(f,0,SEEK_SET);//burada metinin başından başla dedik
+
+	char *data= (char * )malloc(sz);//burada metini data olarak tanımladık
+
+	fread(data,sizeof(char),sz,f);//burdada okuma satirini yazdık
+
+
+	printf("%s",data);
+	free(data);
+
+	fclose(f);
+
+
+*/
+	/*
+	printf("hangi işlem yapmak istiyorsanız ?\n");
+	printf("hesap bilgilerini okumak için 1 giriniz : \n");
+    printf("Yeni hesap  için 2  giriniz : \n");
+
+
+    int x ;
+    fflush(stdout);
+    scanf("%d",&x);
+    if(x == 1){
+    	printf("hesapın adısı giriniz : \n");
+    	char acc_name[100];
+    	fflush(stdout);
+    	scanf("%s",&acc_name);
+
+    	FILE *f=fopen("acc_name","r");
+    if(f == NULL){
+    	printf("öyle bir hesap yok yeni hesap oluşturunz : \n");
+    	exit(1);
+
+    }
+    fseek(f,0,SEEK_END);
+    int acc_data_sz = ftell(f);
+    fseek(f,0,SEEK_SET);
+
+    char *acc_data = (char * )malloc (acc_data_sz);
+    fread(acc_data, sizeof(char ),acc_data_sz,f);
+
+
+    printf("%s\n şifriniz hiç kimseyle baylaşmayınız . ");
+    printf("%s\n",acc_data);
+
+
+    free(acc_data);
+    fclose(f);
+    }
+
+
+    if(x==2){
+
+
+    	printf("hesap adınızı giriniz : \n");
+    	char acc_name[100];
+    	fflush(stdout);
+    	scanf("%s", acc_name);
+
+
+
+    	printf("şifrinizi giriniz..\n");
+    	char acc_pass[100];
+    	fflush(stdout);
+
+    	scanf("%s", acc_pass);
+
+
+
+    	FILE *f=fopen("acc_name","w");
+    	char *space = "  ";
+    	fwrite(acc_name, sizeof(char),strlen(acc_name),f);
+    	fwrite(acc_pass,sizeof(char),strlen(acc_pass),f);
+    	fwrite(space, sizeof(char),strlen(acc_pass),f);
+    	fclose(f);
+
+
+
+
+    }
+
+
+
+
+*/
+/*
+
+
+
+	int counter = 0;
+	char c ;
+	while((c = getc(f)) != '0'){
+
+		if(c ==EOF){
+			exit(0);
+		}
+		counter++;
+	//printf("sıfırı bulunmadı ");
+
+	}
+	printf("sıfrı bulundu = %d ",counter);
+
+*/
+	/*
+
+	FILE *f=fopen("hi.txt","r");
+	int counter = 0;
+	char c ;
+	while((c = getc(f)) != 'b'){
+
+		if(c ==EOF){
+			exit(0);
+		}
+		counter++;
+	//printf("sıfırı bulunmadı ");
+
+	}
+	printf("sıfrı bulundu = %d",counter);
+*/
+
+
+
+
+
+//return 0;}
+
+
+//**************************************************************************structs
+/*
+ typedef struct Car {
+	char  *type ;
+	char  *color;
+	int   price;
+
+}Car;
+void printInfo(Car c);
+void setPrice(Car *c , int newPrice);
+void setPrice2(Car *c , int newPrice);
+
+
+int main (){
+Car car1,car2;
+
+	car1.type="BMW";
+	car1.color="blue";
+	car1.price=1000;
+
+
+	car2.color="red";
+	car2.type="mersisds ";
+	car2.price=20000;
+
+
+printInfo(car1);
+printInfo(car2);
+setPrice(&car1 , 50000 );
+printInfo(car1);
+setPrice2(&car2,100000000);
+printInfo(car2);
+
+
+
+
+return 0;
+
+
+}
+
+
+
+
+void printInfo(Car c){
+	printf(" type :%s , color : %s , price  :%d$\n",c.type,c.color,c.price);
+
+}
+
+
+void setPrice(Car *c , int newPrice){
+
+	c->price=newPrice;
+
+
+
+}
+void setPrice2(Car *c , int newPrice){
+
+	c->price=newPrice;
+
+
+
+
+}
+*/
+
+/*
+struct ogrenci_basari{
+
+char isim[20];
+char soyad[20];
+int vize;
+int final;
+int bnot;
+
+}ders;
+
+int main (){
+	printf("öğrenci adını giriniz : \n");
+	fflush(stdout);
+	scanf("%s",&ders.isim);
+	printf("öğrenci soyadını giriniz : \n");
+	fflush(stdout);
+	scanf("%s",&ders.soyad);
+	printf("vize notunu giriniz : \n");
+	fflush(stdout);
+	scanf("%d",&ders.vize);
+	printf("final notunu giriniz : \n");
+	fflush(stdout);
+	scanf("%d",&ders.final);
+
+
+	ders.bnot=ceil (ders.vize*0.4+ders.final*0.6);
+	printf("final notu giriniz :%d \n ",ders.bnot);
+	printf("\n%s %s\n vize notu = %d\nfinal not= %d basarı not = %d ",ders.isim,ders.soyad,ders.vize,ders.final,ders.bnot);
+
+
+}
+*/
+
+//int main(){
+
+	//**********************************************************gets kullanımı
+//entere basana kadar yazabiliyoruz ..
+/*
+	char isim[20];
+	printf("bir isim giriniz : \n");
+	fflush(stdout);
+
+	char *control = gets(isim);
+
+	if(NULL!= control){
+		printf("işlem başarlı . ");
+	}else{printf("işlem başarsız : ");}
+
+
+
+}
+*/
+
+/*
+	//********************************************puts printf gibi ama puts ve gets strings özel
+	int main(){
+		char isim [20];
+		printf("bir isim giriniz : ");
+		fflush(stdout);
+		gets(isim);
+		puts(isim);
+	}
+	*/
+//*********************************************************strlen kullnımı
+/*
+int main (){
+char sehir [100];
+unsigned long 	uzunluk=0;
+printf("bir şehir giriniz : ");
+fflush(stdout);
+gets(sehir);
+uzunluk= strlen(sehir);
+printf("%s şehir isimi %lu uzunluğundadır.\n ",sehir , uzunluk);
+
+
+
+}
+*/
+
+
+//*****************************strchr bir karkteri ararken onu bulunduğu zaman karkteri ve sonraki yazıyı yazar
+//******************************strrchr en son karkteri alır
+/*
+int main (){
+	char cumle[]="okula  gülerek git .";
+	char *bulundu=strrchr(cumle,'g');
+
+
+
+if(NULL!=bulundu){
+printf("%s \n ",bulundu);
+
+}else{
+	printf("bulunmadı");
+}
+char cumle1[]="okula  gülerek git .";
+	char *bulundu1=strchr(cumle,'g');
+
+
+
+if(NULL!=bulundu1){
+printf("%s",bulundu1);
+
+}else{
+	printf("bulunmadı");
+}
+}
+
+*/
+
+//*******************************************************strcpy
+/*
+int main(){
+char kopylal[]="Okullar açılsın ";
+char buraya[100];
+printf("öncesi . %s\n",buraya);
+strcpy(buraya ,kopylal);
+printf(" sonrası %s",buraya);
+}
+*/
+/*
+char *kopy(char *dest, const char *src)
+{
+    int index = 0;
+
+    while (src[index])
+    {
+        dest[index] = src[index];
+        index++;
+    }
+
+    return (dest);
+}
+
+
+int main(){
+char kopylal[]="hello ";
+char buraya[100];
+printf("öncesi . %s\n",buraya);
+kopy( buraya ,kopylal);
+printf(" sonrası %s",buraya);
+}
+*/
+/*
+void top(int *);
+int main(){
+int  sayilar []={3};
+top(&sayilar);
+printf("%d",*sayilar);
+
+	}
+
+void top(int *p){
+	*p=*p * * p  ;
+}
+*/
+
+//int kare(int *dizi,int size);
+
+//int main (){
+	/*
+	int sayi ;
+	int *p;
+	p=&sayi;
+	printf("sayinin tutlduğu aderss : %d\n",p);
+	printf("bir sayiyi giriniz : ");
+	fflush(stdout);
+	scanf("%d",&sayi);
+	printf("sayinin değeri : %d\n",sayi);
+	*p=sayi+10;
+	printf("syinin son değeri : %d ",sayi);
+*/
+/*
+	int dizi[]={10,40,50,60,80};
+	int *p=&dizi;
+	for(int i =0;i<5;i++){
+		printf("dizi[%d]=%d\n",i,p[i]);
+
+
+	}
+*/
+/*
+	int sayi=123;
+	int sayi2=321;
+	int *p=&sayi;
+	int *t=&sayi2;
+
+	printf(" sayi değikenin adreesi : %d\n",p);
+	printf(" sayi değeri  : %d\n",*p);
+	printf(" sayi1 değikenin adreesi : %d\n",t);
+	printf(" sayi değeri : %d\n",*t);
+	printf("aderssler arasındakı fark = %d",p-t);
+
+*/
+
+
+	//**********************************strcat
+	/*
+	char s1 []="hazem ";
+	char s2 []="abdullah'ın ";
+	char s3 []="Abisi ";
+	char s4 [100];
+
+	strcat(s4,s1);
+	printf("%s\n",s4);
+	strcat(s4,s2);
+	printf("%s\n",s4);
+	strcat(s4,s3);
+	printf("%s\n",s4);
+
+
+*/
+
+	//************************************************strcat fonction
+/*
+		char *my_strcat(char *strg1, char *strg2)
+		{
+		    char *start = strg1;
+
+		    while(*strg1 != '\0')
+		    {
+		        strg1++;
+		    }
+
+		    while(*strg2 != '\0')
+		    {
+		        *strg1 = *strg2;
+		        strg1++;
+		        strg2++;
+		    }
+
+		    *strg1 = '\0';
+		    return start;
+		}
+
+
+		char s1 []="hazem ";
+			char s2 []="abdullah'ın ";
+			char s3 []="Abisi ";
+			char s4 [100]={'\0'};
+
+			my_strcat(s4,s1);
+			printf("%s\n",s4);
+			my_strcat(s4,s2);
+			printf("%s\n",s4);
+			my_strcat(s4,s3);
+			printf("%s\n",s4);
+			*/
+
+
+//******************************************************strncat
+	//birinci mettine ,ikinci metinden kaç karekter eklemek istiyoruz bilirtiyor
+/*
+	char s1[array_size];
+	char s2[array_size];
+	 unsigned int n =0;
+	printf("birinci yazıyı yazınız  ");
+	 fflush(stdout);
+	gets(s1);
+	printf("ikin ci yazıyı yazınız  ");
+	 fflush(stdout);
+	gets(s2);
+	printf("eklenecek karekter sayısı giriniz");
+	 fflush(stdout);
+
+	scanf("%d",&n);
+
+    // printf("s1 : %s\n",s1);
+     strncat(s1,s2,n);
+     printf("s1 : %s",s1);
+*/
+
+	 //*********************strncat fonction
+
+
+/*
+	 char *mystrncat(char *s1,const char *s2 , unsigned int n  ){
+
+	 char * ptr = s1+strlen(s1);
+
+	 while ((n > 0 ) &&  (*s2 !='\0'))	 {
+
+	 *ptr = *s2;
+	  --n;
+	 ++s2;
+	 ++ptr;
+	 }
+	 *ptr = '\0';
+	 return s1;
+	 }
+
+
+*/
+ /*
+		char* my_strncat(char* destination, const char* source, size_t num)
+		{
+
+		    char* ptr = destination + strlen(destination);
+
+
+		    while (*source != '\0' && num--) {
+		        *ptr++ = *source++;
+		    }
+
+		    *ptr = '\0';
+		    return destination;
+		}
+		*/
+	/*
+
+		 char s1[array_size];
+			char s2[array_size];
+			 unsigned int n =0;
+			printf("birinci yazıyı yazınız  ");
+			 fflush(stdout);
+			gets(s1);
+			printf("ikin ci yazıyı yazınız  ");
+			fflush(stdout);
+			gets(s2);
+			printf("eklenecek karekter sayısı giriniz\n");
+			 fflush(stdout);
+
+			scanf("%d",&n);
+
+		    //	 printf("s1 : %s\n",s1);
+			 mystrncat(s1,s2,n);
+		     printf("s1 : %s",s1);
+		     */
+
+
+
+	//*******************************************strcmp iki metinin birbirini karışlaştırıyor
+	// s1 < s2 negatif , s1>2 pozitif  s1=s2 sıfır
+
+
+/*
+	char s1 []= "idleb";
+	char s2 []= "idleb";
+
+	int x = strcmp(s1,s2);
+	printf("%d",x);
+*/
+
+	//**********************************strcmp fonuction
+
+
+/*
+		int my_strcmp(char *strg1, char *strg2)
+		{
+		    while( ( *strg1 != '\0' && *strg2 != '\0' ) && *strg1 == *strg2 )
+		    {
+		        strg1++;
+		        strg2++;
+		    }
+
+		    if(*strg1 == *strg2)
+		    {
+		        return 0; // strings are identical
+		    }
+
+		    else
+		    {
+		        return *strg1 - *strg2;
+		    }
+
+		}
+		char str [100];
+		char pas[]= "abdullah";
+		int cmp = -1 ;
+
+		printf("şifre giriniz : ");
+		fflush(stdout);
+		gets(str);
+
+
+		 cmp =  my_strcmp(pas,str);
+		if( 0 == cmp  )
+		{
+			printf("şifre goğru. ");
+		}else{
+
+			printf("şifre yanlış .");
+		}
+*/
+
+
+	//*****************************************************strncmp
+/*
+	char x[array_size];
+	char y[array_size];
+	int w ;
+	int c;
+
+	printf("yazı giriniz : ");
+	fflush(stdout);
+	gets(x);
+	printf("2 yazı giriniz : ");
+	fflush(stdout);
+	gets(y);
+	printf(" karıilartırlacak sayıyı giriniz : ");
+	fflush(stdout);
+	scanf("%d",&w);
+	 c = strncmp(x,y,w);
+	printf("%d",c);
+
+
+
+
+*/
+//*****************************strncmp fonction
+	/*
+		int mystrncmp( const char * s1, const char * s2, size_t n )
+		{
+		    while ( n && *s1 && ( *s1 == *s2 ) )
+		    {
+		        ++s1;
+		        ++s2;
+		        --n;
+		    }
+		    if ( n == 0 )
+		    {
+		        return 0;
+		    }
+		    else
+		    {
+		        return ( *(unsigned char *)s1 - *(unsigned char *)s2 );
+		    }
+		}
+
+	char x[array_size];
+		char y[array_size];
+		int w ;
+		int c;
+
+		printf("yazı giriniz : ");
+		fflush(stdout);
+		gets(x);
+		printf("2 yazı giriniz : ");
+		fflush(stdout);
+		gets(y);
+		printf(" karıilartırlacak sayıyı giriniz : ");
+		fflush(stdout);
+		scanf("%d",&w);
+		 c = mystrncmp(x,y,w);
+		printf("%d",c);
+
+
+
+
+
+*/
+
+//**********************************strset
+
+/*
+	char *mystrset(char *str,int ch ){
+      if( *str !='\0'){
+		*str = ch;
+		  ++str;
+}
+
+		return str;
+	}
+
+
+
+	char str[100];
+	int ch =0;
+	printf("bir yazı giriniz : ");
+	fflush(stdout);
+	gets(str);
+	printf("yazıyı hangi karakter ile doldurmak istrsin ? ");
+	fflush(stdout);
+
+	ch =getchar();
+
+
+	printf("ilk durumu %s \n ",str);
+
+	mystrset(str,ch);
+	printf("ikinci durumu %s \n ",str);
+
+
+
+*/
+
+	//*******************strrev
+/*
+		char *mystrrev( char * s )
+		{
+		    if ( *s )
+		    {
+		        for ( char *p = s, *q = s + strlen( s ); p < --q; ++p )
+		        {
+		            char c = *p;
+		            *p = *q;
+		            *q = c;
+		        }
+		    }
+
+		    return s;
+		}
+
+		char x[array_size];
+		printf("şehir ismi giriniz : ");
+		fflush(stdout);
+		scanf("%s",&x);
+		mystrrev(x);
+		printf("ters çevrilmiş durumu : %s ",x);
+*/
+
+
+
+	//*******************************strupr KÜÇÜK  HARFLERDAN BÜYÜK HARFLERE
+/*
+	char *mystrupr(char *string)
+		{
+		   while(*string)
+		   {
+		       if ( *string >= 'a' && *string <= 'z' )
+		       {
+		          *string = *string - 32;
+		       }
+		       string++;
+		   }
+		}
+		char name[array_size];
+		printf("bir yazı yazınız : ");
+		fflush(stdout);
+        gets(name);
+        mystrupr(name);
+        printf("büyük harflarlı : %s",name);
+
+*/
+
+
+	//*********************strlwr BÜYÜK HARFLERDAN KÜÇÜK HARFLERE
+	/*
+		char *mystrlwr(char *str)
+		{
+		  unsigned char *p = (unsigned char *)str;
+
+		  while (*p) {
+		     *p = tolower((unsigned char)*p);
+		      p++;
+		  }
+
+		  return str;
+		}
+
+
+		char name[array_size];
+				printf("bir yazı yazınız : ");
+				fflush(stdout);
+		        gets(name);
+		        mystrlwr(name);
+		        printf(" küçük harflarlı : %s",name);
+
+
+
+*/
+
+
+
+	//****************************KARAKTER DİZİSİNİN SONUNA GİTME
+	/*
+	char name[array_size]="abdullah";
+	char *p=name +strlen(name);
+	puts(p);
+	//printf("%s",p);
+
+//ikinici yöntem
+
+
+	char *p2=strchr(name,'\0');
+	puts(p2);
+
+	//üçüncü yöntem
+
+	char *p3=name;
+	while(*p3 !='\0' ){
+		++p3;
+	}
+	puts(p3);
+
+}
+*/
+/*
+char *getDay(int day){
+    	char *retvalue=NULL;
+    	switch(day){
+    	case 1:
+    		retvalue="Sunday";
+    		break;
+    	case 2:
+    	    		   retvalue="Monday";
+    	    		    break;
+    	case 3:
+        	    		retvalue="Tuesday";
+        	    		break;
+    	case 4:
+        	    		retvalue="Wednesday";
+        	    		break;
+    	case 5:
+        	    		retvalue="Thursday";
+        	    		break;
+    	}
+
+return retvalue;
+
+}
+*/
+
+
+/*
+  void test(){
+
+ 	   char *p3="ankara";
+ 	   printf("%p\n",p3);
+
+ }
+
+ int getHexChar (int x ){
+
+ 	return "0123456789ABCDEF"[x];
+
+
+ }
+ */
+
+
+//int main (){
+//**********************************************************dizgeler(Strings)
+/*
+	  putchar('A');
+	                                          printf("\n");
+	                                          putchar(*"Osman");
+	                                          printf("\n");
+	                                          putchar("Abdullah"[1]);
+	                                          */
+/*
+    char name[] ="Abdullah";
+	printf("name adresi  : %p\n", name);
+	printf("name  : %s\n ", name);
+	printf("adress : %p\n ", "osman");
+	printf("adress içeriği : %s\n ", "osman");
+*/
+
+
+
+
+// getHexChar
+	/*
+for(int i =0; i< 16 ;i++ ){
+	putchar(getHexChar(i));
+	printf("\n");
+
+
+
+}*/
+/*
+	char name[100];
+
+
+	strcpy(name,"Osman");
+	 puts(name);
+
+*/
+
+
+	//NOT : birbirinie benzyen stringler aynı adresse almayabilir "abdullah"; "abdullah".
+
+
+
+
+	//******************************************dizgelerin karşlaştırma
+
+
+ 	   //bu şekilde iki adress karşlaştırıyoruz
+/*
+	      if("ankara " == "ankara "){
+
+		    printf("eşit .\n");
+
+
+	       }else{
+	    	   printf("eşit diğler\n");
+	       }
+	       char *p1="ankara";
+	       char *p2="ankara";
+	       printf("%p\n",p1);
+	       printf("%p\n",p2);
+	       printf("Compare  =%d \n",strcmp(p1,p2));
+	       test();
+	       //derleceğimiz aynı ifadylar aynı adresste tutuyor
+
+
+*/
+
+
+	//***********************************************dizgelerin ömrü ,, statik ömürlüdür ,
+	//bir işlevin bir dizgeyle geri dönmesi
+/*
+	char *day=getDay(2);
+	puts(day);
+*/
+
+
+	//****************dizgelerin birleşmesi
+
+
+/*
+	char *ptr="merhaba ben abdullah"
+			    "benim yaşım 21  ";
+
+	puts(ptr);
+	char *p = "Fikret ," "Engin ," "Ahmet ";
+	puts(p);
+
+
+	char *t="merhaba ben abdullah\ benim yaşım 21  ";
+	puts(t);
+
+*/
+
+
+
+	//****************************************Dizgelerde ters bölü karakterlerin kullanılması
+
+
+/*
+	char *ptr="\"Tallha\"\tAbdullah\tfikret";
+	puts(ptr);
+
+
+*/
+
+
+
+	//***************************************boş dizge
+
+/*
+
+	char *ptr="";
+       printf("dizge uzunluğu = %d \n ",strlen(ptr));
+
+       char name[100];
+       name[0]='\0';
+       printf("dizge uzunluğu = %d \n ",strlen(name));
+
+
+*/
+
+
+
+
+	//************************************Pointer değişkenleri dizglerle ilk değer verilmesi
+
+
+
+	/*
+	 char *str= "samsun";
+	 char  *error ="Dosya açılamadı ";
+	 char   *warining = "yanlış bir karkter girdiniz  ";
+
+	 */
+
+	 //**********************karkter dizilerine ilk değer verilmesi
+
+	 /*
+	 char name [7]={'f','d','s','g','f','q','\0'};
+	 char name2[]="fikret";
+	 */
+
+	 //**********diziler ile pointer dizgeler karşlaştırması
+
+
+/*
+	 char name [100]="osman";
+	 }
+
+*/
+ //***********************************bellek fonksiyonları
+ void *mymemcpy(void *A, const void *B,  unsigned int  byte)//yazdığım memcpy Function
+ {
+      char *S = (char *)A;
+      const char *pSource =(const char*)B;
+      if((S!= NULL) && (pSource!= NULL)){
+
+        while(byte)//till cnt
+         {
+            //Copy byte by byte
+            *(S++)=*(pSource++); --byte;
+
+         }
+      }
+
+     return A;
+ }
+ void *_Mymemset(void *s, int c,  unsigned int  byte) // yazdığım memset Founction
+
+{
+
+        char *bellek = s;
+        for (int i = 0; i < byte; i++)
+        bellek[i] = c;
+
+       return (s);
+}
+ void *Mymemchr( const void *s, unsigned char c, size_t n)
+
+ {
+	 const char *pBlock=s;
+	 void *vlaue = NULL;
+	 while(--n !=0){
+		 if(*++pBlock==c){
+			 vlaue = pBlock;
+			 break;
+		 }
+
+
+	 }
+	 return vlaue;
+ }
+ int my_memcmp(void *b, void *c, size_t uzunluk)
+ {
+     unsigned char *p = b;
+     unsigned char *q = c;
+
+     while (uzunluk > 0)
+     {
+       if (*p != *q){
+    	   int x=*p - *q;
+
+    	   return x;
+       }
+
+       else{
+    	 uzunluk--;  p++;   q++;
+
+       }
+     }
+     return 0;
+ }
+ int main (){
+	 //*************************************** memcpy bir dizinin başka dizeye taşır .
+
+/*
+	 int number1[5]={1,3,5,7,9};
+	 int number2[5];
+
+
+	 for(int i =0; i<5;i++){
+		  printf("%d. elman : %d\n",i,number2[i]);
+
+	 }
+	 mymemcpy(&number2,&number1,sizeof(number2));
+	 printf("memcpyden sonra : \n");
+	 for(int i =0; i<5;i++){
+			  printf("%d. elman : %d\n",i,number2[i]);
+
+		 }
+
+	  int f1 = 156;
+	  int f2;
+
+
+		 mymemcpy(&f2,&f1,sizeof(f2));
+	  printf("f2== %d ",f2);
+
+
+*/
+
+
+	 //************************************** memset bir ifadenin yerine bir şeyle değiştirmek
+/*
+	 int number[100];
+
+	 _Mymemset(number,0,sizeof(number));
+
+	 for(int i = 0 ; i<100; i++){
+
+		 printf("%d.eleman  = %d\n",i,number[i]);
+	 }
+
+	 char str[50];
+
+	    strcpy(str,"This is string.h library function");
+	    puts(str);
+
+	    _Mymemset(str,'$',7);
+	    puts(str);
+
+*/
+
+
+	 //************************************* memchr bir şeyin bulunması  yerdim eder .
+/*
+	 char name []="istanbula gittik ";
+	 char *p = memchr(name,'n',sizeof(name));
+	 puts(p);
+*/
+
+
+/*
+	 char id[5]={0x11,0x22,0x30,0x40,0x50};
+	 char *ptr=Mymemchr(id,0x30,sizeof(id));
+	 char temp=*ptr;
+	 printf("%x\n",temp);
+
+
+
+	    const char *str = "Learn C from trytoprogram.com";
+	    const char ch = 't';
+
+	    //displaying str
+	    printf("str = %s\n\n", str);
+
+	    printf("Remaining string after '%c' : %s\n", ch, (char *) Mymemchr( str, ch, strlen(str)));
+
+
+*/
+
+
+	 //***************************memcmp karşlaştırma için kullanılır
+
+/*
+
+	 int s1 [5]={1,2,3,4,6};
+
+	 int s2 [5]={1,2,3,4,5};
+
+
+
+
+	 int cmp=my_memcmp(s1,s2,sizeof(s1));
+	 printf("%d\n",cmp);
+		  if(cmp==0 ){
+	 		puts("diziler birbirine eşittir . \n");
+	 	}else{
+	 		puts("diziler birbirine  eşit değiler . \n");
+	 	}
+	 	if(cmp>0){
+
+	 			puts("s1 dizinin s2 dizininden daha büyük . \n");
+
+	         }else if(cmp<0){
+	        	 puts("s2 dizinin s1 dizininden daha büyük . \n");
+	         }
+
+
+
+
+
+
+*/
+ }
+
+**********************************************************************************************************
+*******************************************************************************************
+
+
+
+
+
+/*
+	                        	 int i , j, k ;
+	                        	      int A[3][3]={{1,2,3},{4,5,6},{7,8,9}};
+	                        	      int B[3][3]={{9,8,7},{6,5,4},{3,2,1}};
+	                        	      int C[3][3];
+	                        	      for(i=0; i<3;i++){
+	                        	          for(j=0; j<3;j++){
+	                        	              C[i][j]=0;
+	                        	              for(k=0;k<3;k++){
+	                        	                  C[i][j]= C[i][j]+A[i][k]*B[k][j];
+	                        	              }
+
+	                        	          }
+	                        	          printf("\n");
+	                        	          for(i=0;i<3;i++){
+	                        	              for(j=0;j<3;j++){
+	                        	                  printf("%5d",C[i][j]);
+	                        	                  printf("\n");
+
+	                        	              }
+	                        	          }
+	                        	      }
+
+
+	                        	                  */
+	                        	 /*
+
+	                        	 int i , j ,temp;
+	                        	 int dizi[7]={1,6,8,9,5,3,2};
+
+	                        	 printf("\nsiralamadan önce ");
+	                        	 Goster(dizi);
+	                        	 for(i=0; i<6; i++ ){
+	                        		 for(j=i+1; j<7;j++){
+	                        			 if(dizi[i]>dizi[j]){
+	                        				 temp=dizi[i];
+	                        				 dizi[i]=dizi[j];
+	                        				 dizi[j]=temp;
+	                        			 }
+
+	                        		 }
+	                        	 }
+	                        	 printf("\n siralama sonra : ");
+	                        	 Goster(dizi);
+	                         }
+
+	                         void Goster(int diziA[]){
+
+	                        	 int i ;
+	                        	 printf("\n");
+	                        	 for(i=0;i<7;i++)
+	                        		 printf("%d ",diziA[i]);
+
+
+*/
+/*
+	                        	 // *****************metinler
+	                        	 char isim[]={"abdullah "};
+	                        	 printf("%s",isim);
+
+
+
+*/
+	                        	 // *****************strcat (bir metine sonuna metin ekler )
+
+/*
+	                        	 char isim[]={"abdullah "};
+	                        	 char soyisim[]={"alhasan "};
+	                        	 printf(strcat(isim ,soyisim ));
+*/
+/*
+	                        	 //*****************strlen metinin boyutu ölçer
+	                        	1- char isim[]={"abdullah "};
+	                        	 char soyisim[]={"alhasan "};
+	                        	 int sayi=strlen(isim);
+	                        	 printf("%d",sayi);
+	                        	 fflush(stdout);
+
+
+2-int main (){
+char sehir [100];
+unsigned long 	uzunluk=0;
+printf("bir şehir giriniz : ");
+fflush(stdout);
+gets(sehir);
+uzunluk= strlen(sehir);
+printf("%s şehir isimi %lu uzunluğundadır.\n ",sehir , uzunluk);
+
+
+
+}
+
+*/
+
+
+/*
+	                        	 // *****************strcmp iki metinin eşitler mi değiller mi ölçer
+
+	                        	 char isim[]={"abdullah "};
+	                        	 char soyisim[]={"abdullah "};
+
+	                        	 if(strcmp(isim,soyisim)==0){
+	                        		 printf("eşitler ");
+	                        	 }else{printf("eşit değiller ");}
+
+
+
+*/
+
+
+	                        	 // *****************strlwr metinin harfleri küçük harfleri dönüşüyr
+	                        	 // *****************strupr metinin harfleri büyük harfleri dönüşüyr
+	                        	 // *****************strrev metinin tersi çeviriyor
+
+/*
+	                        	 char isim[]={"abdullah "};
+	                        	 printf(strrev(isim));
+
+	                        		                        	  */
+	                        	 /*
+	                        	 char isim[50];
+	                        	 char sifre[50];
+	                        	 char isimver[]={"abdullah"};
+	                        	 char sifrever[]={"12345"};
+
+
+	                        	 printf(" bir yazı yazininz ");
+	                        	 fflush(stdout);
+	                        	 scanf("%s",&isim );
+	                        	 printf("şiferinizi giriniz ");
+	                        	 fflush(stdout);
+	                        	 scanf("%s",&sifre );
+
+
+	                        	 if(strcmp(isim,isimver)==0 && strcmp(sifre,sifrever)==0){
+	                        		 printf("eşitir ");
+
+	                        	 }else {printf("eşit değiller ");}
+
+*/
+
+//strchr bir karkteri araken onu bulnduğu zaman karkteri ve sonraki yazıyı yazar
+//strrchr en son karkteri alır
+
+int main (){
+	char cumle[]="okula  gülerek git .";
+	char *bulundu=strrchr(cumle,'g');
+
+
+
+if(NULL!=bulundu){
+printf("%s \n ",bulundu);
+
+}else{
+	printf("bulunmadı");
+}
+char cumle1[]="okula  gülerek git .";
+	char *bulundu1=strchr(cumle,'g');
+
+
+
+if(NULL!=bulundu1){
+printf("%s",bulundu1);
+
+}else{
+	printf("bulunmadı");
+}
+}
+ 
+
+
+
+
+	                        	 // *****************MATRİSLER
+	                        	 /*
+	                        	 int matris[4][4]={ {1,2 , 3,4} , {5,6 , 7,8,} , {9,10 , 11,12} , {13, 14 ,15 ,16} };
+
+	                        	 for(int i =0; i<4; i++){
+	                        		 for(int j=0; j<4; j++){
+	                        			 printf(" %d",matris[i][j]);
+
+
+
+	                        		 }
+	                        		 printf("\n");
+
+	                        	 }
+	                        	 printf("\n");
+
+*/
+
+
+
+
+
+
+
+/*
+	                        	 int matris[3][3];
+
+	                        	 for(int i=0 ;  i<3 ;i++){
+
+	                        		 for(int j = 0; j<3; j++){
+	                        			 printf("şu an %d sutunun da bulunyorsunuz \n %d satirini doldurunuz : ",i,j);
+	                        			 fflush(stdout);
+	                        			 scanf("%d",&matris[i][j]);
+	                        		 }
+	                        		 printf("\n");
+	                        	 }
+	                        	 printf("\n");
+
+for(int i =0; i<3;i++){
+	for(int j = 0; j<3; j++){
+		printf(" %d",matris[i][j]);
+	}
+	 printf("\n");
+	 */
+	                        	 /*
+	                             int i , j ,satirtoplam , sutuntoplam;
+
+	                        	                   int A[3][3]={{1, 2, 3 },{4, 5, 6 },{7 , 8 , 9 }};
+
+	                        	                   for(i=0; i<3 ; i++){
+	                        	                	   satirtoplam=0;
+	                        	                	   for(j=0;j<3;j++){
+	                        	                		   satirtoplam+=A[i][j];
+	                        	                	   }
+	                        	                	   printf("%d sutun toplam = %d\n",i+1,satirtoplam );
+	                        	                   }
+
+return 0;
+*/
+
+
+
+	                        	// *****************Strings
+	                        	 /*
+char string[20];
+printf("\nbir yazı yazınız ");
+fflush(stdout);
+
+scanf("%s",string);
+
+printf("\n%s yazdınız ",string);
+*/
+
+
+
+
+
+
+	                        	 //******************strcpy bir dizinin başka dizye aktarmak için kullanır
+/*
+
+	                        	 char *str1="abdullah ",str2[10]="alhasan";
+	                        	 puts (str1);
+	                        	 puts (str2);
+	                        	 printf("aktarma işlemlerini yapiliyor \n");
+	                        	 strcpy(str2,str1);
+	                        	 puts(str2);
+
+*/
+
+
+
+/*
+	                        	 char dizi[9]={'a','b','d','u','l','l','a','h'};
+	                        	 for(int i = 0; i<8;i++){
+	                        		 printf("dizi[%d] içeriği %c\n",i,dizi[i]);
+	                        	 }
+	                        	 printf("%s\n",dizi);
+                                 for(int i=0;i<9;i++){
+	                             printf("%c",dizi[i]);
+                                 }
+*/
+
+
+
+/*
+	                        	                                 char isim[25];
+	                        	                                 printf("bir yazı yazınız ");
+	                        	                                 fflush(stdout);
+	                        	                                 scanf("%c",&isim);
+	                        		                        	 int sayi=strlen(isim);
+	                        		                        	 printf("%d",sayi);
+	                        		                        	 fflush(stdout);
+
+*/
+
+
+/*
+	                        	 char x[20],y[20];
+	                        	 printf("birinici metin giriniz ");
+	                        	 fflush(stdout);
+	                        	 gets(x);
+
+	                        	 printf("ikinici metin giriniz ");
+	                        	 fflush(stdout);
+	                        	 gets(y);
+	                        	 if(strcmp(x,y)<0){
+	                        		 printf("ikinici metin daha uzun ");
+
+	                        	 }else{
+	                        		 printf("birinici metin daha kısa ");
+
+	                        	 }
+*/
+/*
+	                        	 int sayac;
+	                        	 char dizi[100],karakter;
+	                        	 printf("bir metin yaziniz ");
+	                        	 fflush(stdout);
+	                        	 gets(dizi);
+
+	                        	 int i ;
+	                        	 printf("aranacak karakteri giriniz ");
+	                        	 fflush(stdout);
+	                        	 gets(i);
+
+	                        	 karakter=getchar();
+
+
+	                        	 for(int x =0; dizi[x]!=NULL;x++){
+	                        		 if(dizi[x]==karakter)
+	                        			 sayac++;
+
+
+
+	                        	 }
+	                        	 printf("metin içinde %d adet \'c\' harf ver .",sayac, karakter);
+
+
+*
+	                        	 /*
+	                        	 char name[20];
+	                        	 int number;
+	                        	 printf("isim ve numara giriniz : ");
+	                        	 fflush(stdout);
+
+	                        	 scanf("%s%d",name ,&number);
+
+	                        	 printf("\n");
+	                        	 printf("isim %s\n",name);
+	                        	 printf("numara %d",number);
+
+*/
+	                        	 /*
+
+	                        	 char name [20];
+	                        	 gets(name);
+	                        	 puts(name);
+*/
+
+
+
+/*
+	                        	 int x=10;
+	                        	 printf("%p",&x);
+*/
+
+/*
+	                        	 int x = 5;
+	                        	 int *p=&x;
+	                        	 printf("%p\n",&x);
+	                        	 printf("%p\n",p);
+*/
+
+
+
+/*
+                           	     int x =7;
+	                        	 int *p=&x;
+	                        	 printf("%d\n",x);
+	                        	 x=9;
+	                        	 printf("%d\n",x);
+	                        	 *p= 33;//bu şekilde değişkeinimzin değeri pointer yolyla deiğiştirdik
+	                        	 printf("%d\n",x);
+*/
+
+
+/*
+	                        	 int *p=(int * )0x324023;//pointera aderss biliretmek
+	                        	 printf("%p\n",p);
+	                        	 */
+
+/*
+	                        	 int x = 7 , *p=&x;
+	                        	 printf("value is : %d, pointer is : %p",x,t);
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

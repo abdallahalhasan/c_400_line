@@ -1,0 +1,218 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+//Abdullah_Alhasan_5190505067_final
+//fflush(stdout);
+#define array_size 200
+
+
+char harf(const char *s)
+{
+    size_t uzun = 0;
+    while (*s++)
+        uzun++;
+    return (uzun);
+}
+void *kopyalamak(void *A, const void *B,  unsigned int  byte)
+ {
+      char *S = (char *)A;
+      const char *p =(const char*)B;
+      if((S!= NULL) && (p!= NULL)){
+
+        while(byte)
+         {
+            *(S++)=*(p++); --byte;
+
+         }
+      }
+
+     return A;
+ }
+char *pesine(char *s1, char *s2)
+{
+    char *basla = s1;
+
+    while(*s1 != '\0')
+    {
+        s1++;
+    }
+
+    while(*s2 != '\0')
+    {
+        *s1 = *s2;
+        s1++;
+        s2++;
+    }
+
+    *s1 = '\0';
+    return basla;
+}
+int karslastirma(void *b, void *c, size_t uzunluk)
+ {
+     unsigned char *p = b;
+     unsigned char *q = c;
+
+     while (uzunluk > 0)
+     {
+       if (*p != *q){
+    	   int x=*p - *q;
+
+    	   return x;
+       }
+
+       else{
+    	 uzunluk--;  p++;   q++;
+
+       }
+     }
+     return 0;
+ }
+char *nkadar(char*hedef, const char*kn, size_t sayi)
+		{
+
+		    char* p = hedef + strlen(hedef);
+
+
+		    while (*kn != '\0' && sayi--) {
+		        *p++ = *kn++;
+		    }
+
+		    *p = '\0';
+		    return hedef;
+		}
+char islemtekrar(char f ){
+
+	         printf("\n baska bir islem isteiyor musunuz? (y/n)  ");
+		     fflush(stdout);
+		     scanf("%s", &f);
+		     return f;
+}
+void cikis(){
+	 printf("baska bir islem yapmamak karar verdiniz");
+     exit(EXIT_SUCCESS);
+}
+
+int main (){
+
+	char s1[array_size]="Today is Wednesday";
+	char s2[array_size]="Tomorrow is Thursday";
+	int x;
+	char f;
+	char h;
+	lable:
+	do{
+
+
+	 puts("•Merhaba hangi işlem yapmak istiyorsanız seçiniz  : \n");
+	 puts("•Dizilerin içerisinde tanımlanan ifadenin kaç harften oluştuğunu öğrnemk için 1 giriniz :  \n");
+	 puts("•s1 ile gösterilen dizi içindeki ifadeyi s2 ile gösterilen dizi ile karşılaştırmak için 2 giriniz : \n .");
+	 puts("•s2 ile gösterilen dizi içindeki ifadeyi s1 ile gösterilen dizinin peşine eklemek için 3 giriniz : \n .");
+	 puts("•s2 ile gösterilen dizi içindeki ifadeyi s1 ile gösterilen diziye kopyalayamak için 4 giriniz : \n");
+	 puts("•s1 ile gösterilen dizi içindeki ifadeyi n harften fazla olmamak üzere s2 ile gösterilen dizinin peşine eklemek için 5 giriniz : \n ");
+	 fflush(stdout);
+	 scanf("%d",&x);
+
+	 if(x==1)goto harflar;
+	 if(x==2)goto karsilastirma;
+	 if(x==3)goto  ekle;
+	 if(x==4)goto copy;
+	 if(x==5)goto nharf;
+	 else {puts("işleminiz başarsız . ");
+	 goto lable;}
+
+
+       harflar:
+           puts("Dizilerin kaç harftan oluştuğunu seçtiniz . ");
+	   unsigned long 	uzunluk=0;
+	   uzunluk= harf(s1);
+	   printf("%s =%lu  uzunluğundadır.\n ",s1 , uzunluk);
+	   uzunluk= harf(s2);
+	   printf("%s =%lu  uzunluğundadır.\n ",s2 , uzunluk);
+	   puts("\n");
+	   h=islemtekrar(f);
+
+	   if(h=='y'){
+	   goto lable;
+	 } cikis();
+
+karsilastirma:
+	puts("s1 ile gösterilen dizi içindeki ifadeyi s2 ile gösterilen dizi ile karşılaştırmak seçtiniz ");
+	int y =karslastirma(s1,s2,sizeof(s1));
+	printf("karşlaştrma sonucu = %d\n",y);
+
+	if(y==0 ){
+	puts("diziler birbirine eşittir . \n");
+	}else{
+	puts("diziler birbirine  eşit değiler . \n");
+}
+	if(y>0){
+
+	puts("s1 dizinin s2 dizininden daha büyük . \n");
+
+	}else if(y<0){
+	puts("s2 dizinin s1 dizininden daha büyük . \n");
+}
+
+        h=islemtekrar(f);
+	if(h=='y'){
+        goto lable;
+	} cikis();
+
+ekle:
+        puts("s2 ile gösterilen dizi içindeki ifadeyi s1 ile gösterilen dizinin peşine eklemek seçtiniz ");
+	pesine(s1,s2);
+	printf("s2 ,s1 e  peşine eklendikten sonra :  %s\n",s1);
+	h=islemtekrar(f);
+
+	if(h=='y'){
+	return main();
+	} cikis();
+
+copy:
+
+	puts("•s2 ile gösterilen dizi içindeki ifadeyi s1 ile gösterilen diziye Kopyalamak seçtiniz . \n");
+	kopyalamak(&s1,&s2,sizeof(s2));
+	printf("Kopyaladıktan sonra s1 = %s",s1);
+	h=islemtekrar(f);
+
+	   if(h=='y'){
+	    return main();
+	    } cikis();
+
+
+
+nharf:
+	puts("s1 ile gösterilen dizi içindeki ifadeyi n harften fazla olmamak üzere s2 ile gösterilen dizinin peşine eklemek seçtiniz");
+	unsigned long uzunluk1=0;
+	uzunluk1=strlen(s1);
+	unsigned int n =0;
+
+	printf("s1 dizinin içindeki ifadeyi === ('%s') \n",s1);
+	printf("s2 dizinin içindeki ifadeyi === ('%s') \n",s2);
+	puts("\n");
+	A:
+
+	puts("s1 ten, s2 e   eklenecek karekter sayısı giriniz\n");
+	puts("NOT :('boşluklar harf sayılır , gireceğiniz sayi 18 dan  büyük olmaması ')\n");
+        fflush(stdout);
+	scanf("%d",&n);
+
+	if(n<=uzunluk1){
+	nkadar(s2,s1,n);
+        printf("s4 : %s\n",s2);
+	puts("\n");
+	}else{
+
+       puts("girdiğiniz sayi dizinin karakterlerinden daha büyük .\n ");
+       goto A;
+
+}
+       h=islemtekrar(f);
+       if(h=='y'){
+       goto lable;
+       } cikis();
+}
+
+while ( h=='y');
+return 0;
+}
